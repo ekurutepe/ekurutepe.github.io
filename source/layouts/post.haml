@@ -11,6 +11,6 @@
           = yield
           %hr/
           %span.meta= "Posted on #{current_article.date.strftime('%B %e, %Y')}"
-    .row
-      - standard_width_div do
-        = partial :article_pager
+    / .row
+    /   - standard_width_div do
+    /     = partial :article_pager
