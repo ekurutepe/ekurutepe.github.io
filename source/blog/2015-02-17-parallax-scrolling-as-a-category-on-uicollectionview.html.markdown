@@ -28,7 +28,7 @@ Here is the header for the <code>ParallaxScroll</code> category:
 //UICollectionViewController+ParallaxScroll.h
 @import UIKit;
 
-@protocol UICollectionViewCellParallax &amp;amp;lt;NSObject&amp;amp;gt;
+@protocol UICollectionViewCellParallax <NSObject>
 
 - (void)updateWithParallaxOffset:(CGPoint)offset;
 
