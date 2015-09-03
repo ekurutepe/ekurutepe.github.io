@@ -97,6 +97,8 @@ set :js_dir, 'js'
 set :images_dir, 'img'
 set :partials_dir, 'layouts'
 
+page "/feed.xml", :layout => false
+
 
 
 # Build-specific configuration
