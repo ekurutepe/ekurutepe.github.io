@@ -8,7 +8,7 @@ iOS 7 introduced a layered design language where the system achieved to create t
 
 Another place where a similar parallax effect can be quite useful is scroll views where the contents of the cells scroll slightly differently than the main scroll view to give the user the illusion of as if the cells are cut-outs showing an object which sits deeper into the screen. The probably best known example of this effect is images in WhatsApp chats. Below you can see this effect in action in a simple demo app:
 
-[caption id="attachment_478" align="aligncenter" width="240"]<img src="http://www.kurutepe.com/wp-content/uploads/2015/02/parallax.gif" alt="A collection view with image cells with parallax scrolling" width="240" height="429" class="size-full wp-image-478" /> A collection view with image cells with parallax scrolling[/caption]
+![A collection view containing image cells with parallax scrolling](/img/parallax.gif)
 
 I recently wanted to implement something similar for a collection view with a custom layout. The most straight forward way to achieve this effect is to implement <code>scrollViewDidScroll:</code> and adjust the contents of the cells accordingly as in this <a href="https://github.com/mayuur/MJParallaxCollectionView">project</a>. Another, more elegant approach is like <a href="https://twitter.com/olebegemann">Ole Begemann</a> described in his <a href="http://oleb.net/blog/2014/05/parallax-scrolling-collectionview/">blog post</a> as part of a <code>UICollectionViewLayout</code>.
 
