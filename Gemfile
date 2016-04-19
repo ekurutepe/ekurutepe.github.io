@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 
 gem 'rack', '1.4.5'
 
-gem "middleman"
+gem "middleman", "~>3.0"
 gem "middleman-blog"
 gem "middleman-livereload"
 gem "middleman-syntax"
