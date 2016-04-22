@@ -1,0 +1,15 @@
+---
+title: Jetlag
+date: 2016-04-21 21:37 CEST
+tags: wwdc
+published: false
+---
+Europe has 8 to 10 hours of time difference with San Francisco. If this is your first time with this kind of time difference, you're in for an experience. Some people are more affected when they fly westward, some eastward. I personally have less problems when flying east but flying west is a bit of a problem for me. Some say that younger people have less problems with jetlag but you tend to get more experience with it over the years as well…
+
+Here are some tips:
+
+- ABSOLUTELY NO ALCOHOL on the day before the flight, during the flight and ideally the day after the flight. 
+- Try to eat and sleep as if you were already in San Francisco the day before the flight. Not easy to do but every hour helps. 
+- Once you're in the plane forget about your own time zone and pretend that you're already on San Franciso time. Luckily most of the flights from Europe to San Francisco tend to be night time in San Francisco time. So just close your eyes and try to get a good nights sleep. If you cannot sleep just close your eyes and try to sleep. Put on some headphones which block out the engine noise, make a couple of relaxing sleepy playlists and just close your eyes. Take some melatonin pills to help you sleep. (They are hard to get in Europe, but can be bought easily in pharmacies in the US. So stock up for your next flight.)
+- DO NOT TAKE A NAP once you are in San Francisco. Force yourself to stay awake at least untill 10pm. 
+- You'll wake up very early in the morning for the first few days. Not much you can do. Pretend you are sleeping if tired. Play with your new shiny beta frameworks and API, if not so tired.
