@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 
-# Hello there!
+### Hello there!
 
 My name is Engin Kurutepe. I've been building apps since the first iPhone SDK came out in 2008 and had the opportunity to get involved with many apps not only for employers/clients but also indepentently on my own. These days, I usually work as a contract iOS developer or mobile product consultant. 
 
