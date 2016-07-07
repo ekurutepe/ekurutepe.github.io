@@ -1,0 +1,16 @@
+<header>
+    <div class="container">
+        <div class="intro">
+            <p class="intro__pre">Hello</p>
+            <p class="intro__main">My name is <span>{{ site.title }}</span>, a {{ site.job }}</p>
+            <p class="intro__post">{{ site.location }}</p>
+        </div>
+        <nav>
+          <ul>
+            {% for page in site.pages %}
+            <li><a href="{{page.url}}">{{page.title}}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+    </div>
+</header>

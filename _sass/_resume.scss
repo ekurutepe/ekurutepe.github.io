@@ -1,0 +1,35 @@
+// @name Resume
+// @description All resume styles
+
+dl {
+    margin-bottom: $spacer;
+}
+
+dt, dd {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: $spacer;
+}
+
+@media(min-width: 640px) {
+    dt, dd {
+        margin-bottom: 60px;
+    }
+}
+
+.title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+a {
+    color: $brand-color;
+    transition: all linear .2s;
+
+    &:hover {
+        background: lighten($brand-color, 60%);
+        color: darken($brand-color, 10%);
+        text-decoration: none;
+    }
+}

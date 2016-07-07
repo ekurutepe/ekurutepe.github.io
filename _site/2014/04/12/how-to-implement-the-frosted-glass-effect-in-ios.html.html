@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>How to Implement the Frosted Glass Effect in iOS</title>
+    <meta name="description" content="The frosted glass effect is a central design element in iOS 7 and there are various ways how you can add it to views in your app. I have been working a lot w...">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://kurutepe.com/2014/04/12/how-to-implement-the-frosted-glass-effect-in-ios.html.html">
+    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://kurutepe.com/feed.xml">
+</head>
+
+    <body>
+        <header>
+    <div class="container">
+        <div class="intro">
+            <p class="intro__pre">Hello</p>
+            <p class="intro__main">My name is <span>Engin Kurutepe</span>, a mobile product consultant</p>
+            <p class="intro__post"></p>
+        </div>
+        <nav>
+          <ul>
+            
+            <li><a href="/about/">About</a></li>
+            
+            <li><a href="/blog/">Blog</a></li>
+            
+            <li><a href="/feed.xml"></a></li>
+            
+            <li><a href="/"></a></li>
+            
+            <li><a href="/css/main.css"></a></li>
+            
+          </ul>
+        </nav>
+    </div>
+</header>
+
+        <div class="container">
+            
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <h1 class="post-title" itemprop="name headline">How to Implement the Frosted Glass Effect in iOS</h1>
+    <p class="post-meta"><time datetime="2014-04-12T02:00:00+02:00" itemprop="datePublished">Apr 12, 2014</time><!--  • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Engin Kurutepe</span></span></p> -->
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The frosted glass effect is a central design element in iOS 7 and there are various ways how you can add it to views in your app. I have been working a lot with blur effects lately and decided to write up what I’ve learned in a series of posts. Let’s start with the simple case of creating a static frosted glass effect before moving on to blurred backgrounds with animations.</p>
+
+<p>A <code class="highlighter-rouge">UIToolbar</code> instance can be used as a superview instead of a normal <code class="highlighter-rouge">UIView</code> to provide a frosted glass effect, however with iOS 7.1 it has become much difficult to configure the desired effect correctly. There are also <a href="https://github.com/JagCesar/iOS-blur/issues/25">reports</a> of Apple rejecting apps going this route.</p>
+
+<p>A better approach is to take advantage of the <code class="highlighter-rouge">drawViewHierarchyInRect:afterScreenUpdates:</code> method in <code class="highlighter-rouge">UIView</code> to efficiently capture an image of the background and use the <code class="highlighter-rouge">UIImage+ImageEffects</code> category by Apple to obtain a customized blur effect to achieve the frosted glass effect. This is best achieved in the <code class="highlighter-rouge">willMoveToSuperview:</code> method of a <code class="highlighter-rouge">UIView</code> subclass which implements the frosted glass effect:</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">willMoveToSuperview</span><span class="p">:(</span><span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">newSuperview</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">willMoveToSuperview</span><span class="p">:</span><span class="n">newSuperview</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">newSuperview</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">UIGraphicsBeginImageContextWithOptions</span><span class="p">(</span><span class="n">newSuperview</span><span class="p">.</span><span class="n">bounds</span><span class="p">.</span><span class="n">size</span><span class="p">,</span> <span class="nb">YES</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">[</span><span class="n">newSuperview</span> <span class="nf">drawViewHierarchyInRect</span><span class="p">:</span><span class="n">newSuperview</span><span class="p">.</span><span class="n">bounds</span> <span class="nf">afterScreenUpdates</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+    <span class="n">UIImage</span> <span class="o">*</span><span class="n">img</span> <span class="o">=</span> <span class="n">UIGraphicsGetImageFromCurrentImageContext</span><span class="p">();</span>
+    <span class="n">UIImage</span> <span class="o">*</span><span class="n">croppedImage</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIImage</span> <span class="nf">imageWithCGImage</span><span class="p">:</span><span class="n">CGImageCreateWithImageInRect</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">CGImage</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">frame</span><span class="p">)];</span>
+    <span class="n">UIGraphicsEndImageContext</span><span class="p">();</span>
+
+    <span class="n">self</span><span class="p">.</span><span class="n">backgroundImage</span> <span class="o">=</span> <span class="p">[</span><span class="n">croppedImage</span> <span class="nf">applyBlurWithRadius</span><span class="p">:</span><span class="mi">11</span>
+                                                   <span class="nf">tintColor</span><span class="p">:[</span><span class="n">UIColor</span> <span class="nf">colorWithWhite</span><span class="p">:</span><span class="mi">1</span> <span class="nf">alpha</span><span class="p">:</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">]</span>
+                                       <span class="nl">saturationDeltaFactor:</span><span class="mi">1</span><span class="p">.</span><span class="mi">8</span>
+                                                   <span class="nl">maskImage:</span><span class="nb">nil</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Since the background is computed once the frosted glass view moves into a superview, changing the frame of the frosted glass view will destroy the illusion. So make sure that you use this trick only for views where you know the frame or the background will not be changing.</p>
+
+<p>The source code for this simple frosted glass view is on <a href="https://github.com/ekurutepe/iOS-Blur-Examples">Github</a>. In the next post in this series, I’ll show how this view can be extended to support changing the frame over a static background.</p>
+
+  </div>
+
+</article>
+
+        </div>
+        <footer class="footer">
+        
+        <div class="social">
+            <a href="http://github.com/ekurutepe" target="_blank">GitHub</a>
+            <a href="http://twitter.com/ekurutepe" target="_blank">Twitter</a>
+            <a href="mailto:" target="_blank">Email</a>
+        </div>
+        
+</footer>
+
+    </body>
+</html>

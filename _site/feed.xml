@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engin Kurutepe</title>
+    <description>Engin Kurutepe. Mobile Product Consultant. iOS Developer. Based in Berlin.
+</description>
+    <link>http://kurutepe.com/</link>
+    <atom:link href="http://kurutepe.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 07 Jul 2016 22:30:31 +0200</pubDate>
+    <lastBuildDate>Thu, 07 Jul 2016 22:30:31 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 07 Jul 2016 20:34:40 +0200</pubDate>
+        <link>http://kurutepe.com/jekyll/update/2016/07/07/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://kurutepe.com/jekyll/update/2016/07/07/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Your first WWDC on a Budget</title>
+        <description>&lt;p&gt;WWDC season officially started this week! For the third time in a row, a lottery will determine who is lucky enough to get the opportunity to buy a ticket for $1599. If you’re not from the Bay Area, you need to pay for airfare and accommodation in addition to the WWDC ticket, and the whole week will suddenly end up costing $4000 easily.&lt;/p&gt;
+
+&lt;p&gt;For a lot of developers, their employers are usually happy to foot the bill but for the ones of us who are self-employed/indie or working for small and lean startups, this is a significant investment. &lt;a href=&quot;https://twitter.com/alexcash&quot;&gt;Alex Cash&lt;/a&gt; recently wrote &lt;a href=&quot;http://alex.cash/saving-on-wwdc/&quot;&gt;a great post&lt;/a&gt; on how you can save on your trip to WWDC which inspired me to write this post to add my own tricks on organizing a budget trip from the viewpoint of a developer who has done the pilgrimage to WWDC from Germany three times already.&lt;/p&gt;
+
+&lt;h3 id=&quot;flights&quot;&gt;Flights&lt;/h3&gt;
+
+&lt;p&gt;If you’re flying to WWDC from Europe, do your homework and search for flights with &lt;a href=&quot;http://www.kayak.com&quot;&gt;Kayak&lt;/a&gt; and &lt;a href=&quot;http://www.skyscanner.com&quot;&gt;SkyScanner&lt;/a&gt;. Both are very good and compare ticket prices across various travel sites for you. If you are a little flexible with dates, you can save a few bucks as well. In my experience SFO is the cheapest airport when you’re flying in from Europe but make sure you search for flights to nearby airports as well.&lt;/p&gt;
+
+&lt;p&gt;Unless you absolutely cannot afford it, it is usually a good idea to pay a little extra for a good connection which is shorter and/or involves fewer stops. I would also recommend flying in a day or two earlier in order to better cope with jet-lag and be able to function at your full capacity when the show starts on Monday. Flying in early is going to increase your accommodation costs, however this ties neatly into the next section…&lt;/p&gt;
+
+&lt;h3 id=&quot;accommodation&quot;&gt;Accommodation&lt;/h3&gt;
+
+&lt;p&gt;Real estate in San Francisco is crazy expensive. People pay $5000 for a single bedroom apartment in the better parts of the city. $50.000 a year, only for rent. Let that sink in…&lt;/p&gt;
+
+&lt;p&gt;The hotels are quite expensive just as well, especially if you’d like to stay within walking distance of Moscone Center. If you can afford it, go for it, Being within walking distance of WWDC is a huge bonus since it allows you to  quickly drop off and pick up things from your room throughout the day.&lt;/p&gt;
+
+&lt;p&gt;If you cannot afford it, don’t worry, it’s not a deal breaker. You can still experience all what the WWDC-week has to offer but you need to plan a little about what you’ll do with your stuff after the sessions before heading out to the parties. My suggestion is take to an Uber to your place, drop your stuff, freshen up and hit the streets again.&lt;/p&gt;
+
+&lt;p&gt;Alex suggests getting a hotel room outside the city, near the airports instead of the expensive hotels near Moscone but I would suggest looking for an AirBnb. You can find really good private AirBnb rooms for about 100-120€ a night within 30min walking distance of Moscone. 30 mins walking distance is a good compromise because you can still walk and experience the fair city of San Francisco a bit or can take a quick Uber if you’re in a hurry.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/SF-rooms.png&quot; alt=&quot;AirBnb Rooms&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When searching for hotels or an AirBnb room, please keep in mind the area around Civic Center and Tenderloin have affordable options but are quite rough as well. Do not get something there unless you’re comfortable around homeless people and/or drug addicts, general crazy people.&lt;/p&gt;
+
+&lt;p&gt;Another good option to reduce the accommodation costs is to book a place with several bedrooms over AirBnb and share it with friends and/or colleagues who happen to be attending WWDC as well.&lt;/p&gt;
+
+&lt;h3 id=&quot;transport-and-internet&quot;&gt;Transport and Internet&lt;/h3&gt;
+
+&lt;p&gt;The best way to get around in San Francisco is either walking if you are not in a hurry or use Lyft or Uber. Both offer very good prices within the city. If you are not short pressed in time you can also use the shared ride options Lyft Line or Uber Pool to get from A-to-B anywhere within the city for a fixed price of about $5.&lt;/p&gt;
+
+&lt;p&gt;T-Mobile offers the best pay-as-you-go plan: you can get a SIM card for free and pay only $10 for a week of cellular internet. They say that T-Mobile has bad coverage outside urban areas but they are just fine in San Francisco with good LTE reception.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately I won’t be able to make it to WWDC this year but I plan to write a couple of posts about how to make the best of your WWDC experience over the next few weeks. Please &lt;a href=&quot;https://twitter.com/ekurutepe&quot;&gt;get in touch&lt;/a&gt; if you have specific questions or suggestions.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 20 Apr 2016 21:46:00 +0200</pubDate>
+        <link>http://kurutepe.com/2016/04/20/tips-for-your-first-wwdc.html.html</link>
+        <guid isPermaLink="true">http://kurutepe.com/2016/04/20/tips-for-your-first-wwdc.html.html</guid>
+        
+        <category>wwdc</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>A New Beginning</title>
+        <description>&lt;p&gt;I’ve been blogging on and off for a few years now but I never really made it a priority.&lt;/p&gt;
+
+&lt;p&gt;I fully intend to change that. My goal is at least two articles per month.&lt;/p&gt;
+
+&lt;p&gt;As a first step, I’ve let myself inspired by &lt;a href=&quot;https://www.youtube.com/watch?v=SjjvnrqDjpM&quot;&gt;Ash Furrow&lt;/a&gt; and &lt;a href=&quot;http://oleb.net/blog/2015/06/redesign/&quot;&gt;Ole Begemann&lt;/a&gt; and switched my blogging engine from Wordpress to &lt;a href=&quot;https://middlemanapp.com&quot;&gt;Middleman&lt;/a&gt;. While at it, I also borrowed the &lt;a href=&quot;&quot;&gt;Clean Blog&lt;/a&gt; implementation from &lt;a href=&quot;https://github.com/ashfurrow/blog&quot;&gt;Ash&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Onwards…&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 25 Aug 2015 17:27:00 +0200</pubDate>
+        <link>http://kurutepe.com/2015/08/25/a-new-beginning.html.html</link>
+        <guid isPermaLink="true">http://kurutepe.com/2015/08/25/a-new-beginning.html.html</guid>
+        
+        <category>blog,</category>
+        
+        <category>meta</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Parallax Scrolling as a Category on UICollectionView</title>
+        <description>&lt;p&gt;iOS 7 introduced a layered design language where the system achieved to create the illusion of three dimensionality by moving views on screen with the movement of the device. The parallax on the lock screen is probably the best known example of this effect. Some system views such as alert dialogs use this effect and as a developer you can use it in your own apps with the &lt;code&gt;UIMotionEffect&lt;/code&gt; classes. &lt;a href=&quot;https://twitter.com/ashfurrow&quot;&gt;Ash Furrow&lt;/a&gt; wrote a really nice &lt;a href=&quot;http://www.teehanlax.com/blog/introduction-to-uimotioneffect/&quot;&gt;tutorial&lt;/a&gt; on how to accomplish this back then in 2013.&lt;/p&gt;
+
+&lt;p&gt;Another place where a similar parallax effect can be quite useful is scroll views where the contents of the cells scroll slightly differently than the main scroll view to give the user the illusion of as if the cells are cut-outs showing an object which sits deeper into the screen. The probably best known example of this effect is images in WhatsApp chats. Below you can see this effect in action in a simple demo app:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/parallax.gif&quot; alt=&quot;A collection view containing image cells with parallax scrolling&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I recently wanted to implement something similar for a collection view with a custom layout. The most straight forward way to achieve this effect is to implement &lt;code&gt;scrollViewDidScroll:&lt;/code&gt; and adjust the contents of the cells accordingly as in this &lt;a href=&quot;https://github.com/mayuur/MJParallaxCollectionView&quot;&gt;project&lt;/a&gt;. Another, more elegant approach is like &lt;a href=&quot;https://twitter.com/olebegemann&quot;&gt;Ole Begemann&lt;/a&gt; described in his &lt;a href=&quot;http://oleb.net/blog/2014/05/parallax-scrolling-collectionview/&quot;&gt;blog post&lt;/a&gt; as part of a &lt;code&gt;UICollectionViewLayout&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since I was already using a &lt;a href=&quot;https://github.com/bryceredd/RFQuiltLayout&quot;&gt;custom quilt layout&lt;/a&gt;, I decided to subclass and extend it with parallax scrolling as Ole described.&lt;/p&gt;
+
+&lt;p&gt;Which worked great, as expected, but only in the simulator…&lt;/p&gt;
+
+&lt;p&gt;Since the layout gets invalidated at each scroll event, it needs to be recomputed constantly. And in the case of the quilt layout this turned out to be very expensive: a collection with about 50 photos could not be scrolled at 60fps on an iPhone 6.&lt;/p&gt;
+
+&lt;p&gt;This could be resolved by implementing some smart caching of the layout attributes in the layout subclass and returning them only by adjusting their parallax offsets. Depending on the nature of the layout this could introduce significant complexity. Complexity is usually a pretty good sign of our code trying to tell us that we’re swimming against the flow.&lt;/p&gt;
+
+&lt;p&gt;So, I decided to listen to my code and implement parallax scrolling by implementing &lt;code&gt;scrollViewDidScroll:&lt;/code&gt; and without touching the layout attributes. Since the app I’m developing, has multiple collection views full of photos already implemented, I could either introduce a common superclass and implement &lt;code&gt;scrollViewDidScroll:&lt;/code&gt; there or go the composition route. Due to its flexibility I chose the composition route and decided to implement parallax scrolling as a category on &lt;code&gt;UICollectionViewController&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is the header for the &lt;code&gt;ParallaxScroll&lt;/code&gt; category:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//UICollectionViewController+ParallaxScroll.h
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIKit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@protocol&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UICollectionViewCellParallax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updateWithParallaxOffset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UICollectionViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;ParallaxScroll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It declares an informal protocol with a single method &lt;code&gt;updateWithParallaxOffset:&lt;/code&gt;, which we will later implement in our collection view cells which should have parallax scroll.&lt;/p&gt;
+
+&lt;p&gt;And the implementation contains a single method:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;scrollViewDidScroll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIScrollView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;scrollView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visibleCells&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visibleCells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UICollectionViewCell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visibleCells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;respondsToSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;updateWithParallaxOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:)])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;CGRect&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;boundsCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGPointMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGRectGetMidX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                                               &lt;span class=&quot;n&quot;&gt;CGRectGetMidY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cellCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offsetFromCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+                &lt;span class=&quot;n&quot;&gt;CGPointMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;boundsCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cellCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;n&quot;&gt;boundsCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cellCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;CGSize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cellSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;CGFloat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxVerticalOffset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cellSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;CGFloat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaleFactor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxVerticalOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parallaxOffset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGPointMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offsetFromCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaleFactor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;updateWithParallaxOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parallaxOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Since the &lt;code&gt;scrollViewDidScroll:&lt;/code&gt; is implemented at the &lt;code&gt;UICollectionViewController&lt;/code&gt; level all of its subclasses in our app are going to be able to handle parallax scroll. On the other hand, we can implement &lt;code&gt;scrollViewDidScroll:&lt;/code&gt; in the subclasses and still retain the parallax scrolling as long as the child implementations call &lt;code&gt;[super scrollViewDidScroll:]&lt;/code&gt;.  The informal protocol &lt;code&gt;UICollectionViewCellParallax&lt;/code&gt; is central to how this approach works. Parallax scrolling can be selectively turned on and off by implementing the &lt;code&gt;updateWithParallaxOffset:&lt;/code&gt; or not in a &lt;code&gt;UICollectionViewCell&lt;/code&gt; subclass. For a simple photo cell, &lt;code&gt;updateWithParallaxOffset:&lt;/code&gt; can be as simple as moving the image view accordingly:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;updateWithParallaxOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;offset&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageViewCenterYConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;constant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;By implementing parallax scroll with a category and an informal protocol, we get the best of both approaches: the scrolling stays very smooth because the layout does not get recomputed at every scroll position, which might be expensive, and we do get to cleanly separate parallax scroll from the rest of our view controller code in its separate location.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 17 Feb 2015 01:00:00 +0100</pubDate>
+        <link>http://kurutepe.com/2015/02/17/parallax-scrolling-as-a-category-on-uicollectionview.html.html</link>
+        <guid isPermaLink="true">http://kurutepe.com/2015/02/17/parallax-scrolling-as-a-category-on-uicollectionview.html.html</guid>
+        
+        <category>ios,</category>
+        
+        <category>cocoa,</category>
+        
+        <category>development</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to Implement the Frosted Glass Effect in iOS</title>
+        <description>&lt;p&gt;The frosted glass effect is a central design element in iOS 7 and there are various ways how you can add it to views in your app. I have been working a lot with blur effects lately and decided to write up what I’ve learned in a series of posts. Let’s start with the simple case of creating a static frosted glass effect before moving on to blurred backgrounds with animations.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;UIToolbar&lt;/code&gt; instance can be used as a superview instead of a normal &lt;code class=&quot;highlighter-rouge&quot;&gt;UIView&lt;/code&gt; to provide a frosted glass effect, however with iOS 7.1 it has become much difficult to configure the desired effect correctly. There are also &lt;a href=&quot;https://github.com/JagCesar/iOS-blur/issues/25&quot;&gt;reports&lt;/a&gt; of Apple rejecting apps going this route.&lt;/p&gt;
+
+&lt;p&gt;A better approach is to take advantage of the &lt;code class=&quot;highlighter-rouge&quot;&gt;drawViewHierarchyInRect:afterScreenUpdates:&lt;/code&gt; method in &lt;code class=&quot;highlighter-rouge&quot;&gt;UIView&lt;/code&gt; to efficiently capture an image of the background and use the &lt;code class=&quot;highlighter-rouge&quot;&gt;UIImage+ImageEffects&lt;/code&gt; category by Apple to obtain a customized blur effect to achieve the frosted glass effect. This is best achieved in the &lt;code class=&quot;highlighter-rouge&quot;&gt;willMoveToSuperview:&lt;/code&gt; method of a &lt;code class=&quot;highlighter-rouge&quot;&gt;UIView&lt;/code&gt; subclass which implements the frosted glass effect:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;willMoveToSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;newSuperview&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;willMoveToSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newSuperview&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;UIGraphicsBeginImageContextWithOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newSuperview&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;drawViewHierarchyInRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;afterScreenUpdates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;UIImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIGraphicsGetImageFromCurrentImageContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;UIImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;croppedImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIImage&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;imageWithCGImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGImageCreateWithImageInRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;UIGraphicsEndImageContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;croppedImage&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applyBlurWithRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;
+                                                   &lt;span class=&quot;nf&quot;&gt;tintColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;colorWithWhite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                       &lt;span class=&quot;nl&quot;&gt;saturationDeltaFactor:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
+                                                   &lt;span class=&quot;nl&quot;&gt;maskImage:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Since the background is computed once the frosted glass view moves into a superview, changing the frame of the frosted glass view will destroy the illusion. So make sure that you use this trick only for views where you know the frame or the background will not be changing.&lt;/p&gt;
+
+&lt;p&gt;The source code for this simple frosted glass view is on &lt;a href=&quot;https://github.com/ekurutepe/iOS-Blur-Examples&quot;&gt;Github&lt;/a&gt;. In the next post in this series, I’ll show how this view can be extended to support changing the frame over a static background.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Apr 2014 02:00:00 +0200</pubDate>
+        <link>http://kurutepe.com/2014/04/12/how-to-implement-the-frosted-glass-effect-in-ios.html.html</link>
+        <guid isPermaLink="true">http://kurutepe.com/2014/04/12/how-to-implement-the-frosted-glass-effect-in-ios.html.html</guid>
+        
+        <category>ios,</category>
+        
+        <category>cocoa,</category>
+        
+        <category>development</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Speech Synthesis on iOS 7</title>
+        <description>&lt;p&gt;One of the new APIs introduced with iOS 7 is the new &lt;a href=&quot;https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/Reference/Reference.html&quot;&gt;speech synthesizer&lt;/a&gt; in the AVFoundation framework. It went relatively unnoticed among the flood of more significant changes in iOS 7.&lt;/p&gt;
+
+&lt;p&gt;I recently received a review for my app &lt;a href=&quot;https://itunes.apple.com/us/app/the-seven-minute-workout/id650872326?mt=8&amp;amp;uo=4&quot;&gt;The Seven Minute Workout&lt;/a&gt; asking for spoken announcement of exercises before they start. What a nice idea, I thought let me record somebody (read: a native speaker, preferably female) saying the names of the exercises, add the audio files to the app bundle and play them when appropriate. Then a Eureka moment came: speech synthesis!&lt;/p&gt;
+
+&lt;p&gt;After a bit of Googling and finding out about the new Apple Speech Synthesizer, the documentation for the API was quite straight-forward. There are two classes involved in making your iPhone speak: &lt;a href=&quot;https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/Reference/Reference.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AVSpeechUtterance&lt;/code&gt;&lt;/a&gt; which represents what is being said and &lt;a href=&quot;https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/Reference/Reference.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AVSpeechSynthesizer&lt;/code&gt;&lt;/a&gt; which does the speaking itself.&lt;/p&gt;
+
+&lt;p&gt;Here is some simple example code:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;AVSpeechUtterance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utterance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AVSpeechUtterance&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;speechUtteranceWithString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;World&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;utterance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;voice&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AVSpeechSynthesisVoice&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;voiceWithLanguage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;en&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;US&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;utterance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AVSpeechUtteranceDefaultSpeechRate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;AVSpeechSynthesizer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;synth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AVSpeechSynthesizer&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;synth&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;speakUtterance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utterance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The code itself is pretty straight-forward. The only important detail that you should pay attention is to use the correct voice, which defaults to the locale specific language and the speed of the utterance, which is probably optimized for turn-by-turn navigation was way too fast for the purposes of &lt;a href=&quot;https://itunes.apple.com/us/app/the-seven-minute-workout/id650872326?mt=8&amp;amp;uo=4&quot;&gt;The Seven Minute Workout&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Jan 2014 01:00:00 +0100</pubDate>
+        <link>http://kurutepe.com/2014/01/09/speech-synthesis-on-ios-7.html.html</link>
+        <guid isPermaLink="true">http://kurutepe.com/2014/01/09/speech-synthesis-on-ios-7.html.html</guid>
+        
+        <category>ios,</category>
+        
+        <category>cocoa,</category>
+        
+        <category>development</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>View Controller Containers and Status Bar Style</title>
+        <description>&lt;p&gt;One of the changes in iOS 7 is the new method of determining the status bar style through the &lt;code class=&quot;highlighter-rouge&quot;&gt;preferredStatusBarStyle&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;The basic idea is quite simple: the system asks the current view controller for the preferred style by calling &lt;code class=&quot;highlighter-rouge&quot;&gt;preferredStatusBarStyle&lt;/code&gt; whenever a status bar update is triggered. In the case of a container view controller, the container can forward the call to a child view controller by implementing the &lt;code class=&quot;highlighter-rouge&quot;&gt;childViewControllerForStatusBarStyle:&lt;/code&gt; method and returning the child view controller which should receive the &lt;code class=&quot;highlighter-rouge&quot;&gt;preferredStatusBarStyle&lt;/code&gt; message. If &lt;code class=&quot;highlighter-rouge&quot;&gt;childViewControllerForStatusBarStyle:&lt;/code&gt; returns &lt;code class=&quot;highlighter-rouge&quot;&gt;nil&lt;/code&gt; or is not implemented at all, the container view controller itself is expected to return a preferred status bar style.&lt;/p&gt;
+
+&lt;p&gt;This is all well and good, but Apple decided not to implement &lt;code class=&quot;highlighter-rouge&quot;&gt;childViewControllerForStatusBarStyle:&lt;/code&gt; for UINavigationController and UITabBarController, preventing the view controllers contained in these controllers from determining the preferred status bar style.&lt;/p&gt;
+
+&lt;p&gt;However, this can easily be added by creating categories for implementing &lt;code class=&quot;highlighter-rouge&quot;&gt;childViewControllerForStatusBarStyle:&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is how this can be implemented for UITabBarController:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UITabBarController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;StatusBarStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;childViewControllerForStatusBarStyle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectedViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And UINavigationController:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UINavigationController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;StatusBarStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;childViewControllerForStatusBarStyle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When you include these categories in your project, your navigation and tab bar controllers will enable their selected and top view controllers to control the status bar style. If you use this approach it is a good idea to call &lt;code class=&quot;highlighter-rouge&quot;&gt;[self setNeedsStatusBarAppearanceUpdate]&lt;/code&gt; in your view controller’s &lt;code class=&quot;highlighter-rouge&quot;&gt;viewDidAppear:&lt;/code&gt; to make sure that your &lt;code class=&quot;highlighter-rouge&quot;&gt;preferredStatusBarStyle&lt;/code&gt; method gets called.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 02 Nov 2013 01:00:00 +0100</pubDate>
+        <link>http://kurutepe.com/2013/11/02/view-controller-containers-and-status-bar-style.html.html</link>
+        <guid isPermaLink="true">http://kurutepe.com/2013/11/02/view-controller-containers-and-status-bar-style.html.html</guid>
+        
+        <category>ios,</category>
+        
+        <category>cocoa,</category>
+        
+        <category>development</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to make your UITabBarControllers and UINavigationControllers respect your auto-rotation choices</title>
+        <description>&lt;p&gt;iOS 6 introduced many changes related to view auto-rotation, which basically aim to decouple view controller orientation from the device orientation. While this might sound counter-intuitive, it actually makes a lot of sense and allows for a finer grained control of view controller orientations: A &lt;code class=&quot;highlighter-rouge&quot;&gt;UITableViewController&lt;/code&gt; in portrait orientation in a pop over contained by a view controller in landscape orientation on an iPad, for instance.&lt;/p&gt;
+
+&lt;p&gt;However the &lt;code class=&quot;highlighter-rouge&quot;&gt;UINavigationController&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;UITabBarController&lt;/code&gt; do not seem to be implementing the new &lt;code class=&quot;highlighter-rouge&quot;&gt;shouldAutorotate&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;supportedInterfaceOrientations&lt;/code&gt; APIs as expected: regardless of the values returned by your view controllers, they always allow any orientation!&lt;/p&gt;
+
+&lt;p&gt;The fix, fortunately, is quite simple and can be added to the standard &lt;code class=&quot;highlighter-rouge&quot;&gt;UINavigationController&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;UITabBarController&lt;/code&gt; with a simple category, which forwards the values set by the &lt;code class=&quot;highlighter-rouge&quot;&gt;topViewController&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;selectedViewController&lt;/code&gt; respectively.&lt;/p&gt;
+
+&lt;p&gt;Here are the two categories you can add at the beginning of your app delegate:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UITabBarController&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UITabBarController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;AutoRotationForwarding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shouldAutorotate&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectedViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;respondsToSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shouldAutorotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectedViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;shouldAutorotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSUInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;supportedInterfaceOrientations&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectedViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;respondsToSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;supportedInterfaceOrientations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectedViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;supportedInterfaceOrientations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIInterfaceOrientationMaskAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;and &lt;code class=&quot;highlighter-rouge&quot;&gt;UINavigationController&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UINavigationController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;AutoRotationForwarding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shouldAutorotate&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;respondsToSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shouldAutorotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;shouldAutorotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSUInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;supportedInterfaceOrientations&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;respondsToSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;supportedInterfaceOrientations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;supportedInterfaceOrientations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIInterfaceOrientationMaskPortrait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hope this helps somebody&lt;/p&gt;
+</description>
+        <pubDate>Thu, 07 Feb 2013 01:00:00 +0100</pubDate>
+        <link>http://kurutepe.com/2013/02/07/how-to-make-your-uitabbarcontrollers-and-uinavigationcontrollers-respect-your-auto-rotation-choices.html.html</link>
+        <guid isPermaLink="true">http://kurutepe.com/2013/02/07/how-to-make-your-uitabbarcontrollers-and-uinavigationcontrollers-respect-your-auto-rotation-choices.html.html</guid>
+        
+        <category>ios,</category>
+        
+        <category>cocoa,</category>
+        
+        <category>development</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

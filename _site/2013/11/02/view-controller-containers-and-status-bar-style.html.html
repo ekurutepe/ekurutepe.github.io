@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>View Controller Containers and Status Bar Style</title>
+    <meta name="description" content="One of the changes in iOS 7 is the new method of determining the status bar style through the preferredStatusBarStyle method.">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://kurutepe.com/2013/11/02/view-controller-containers-and-status-bar-style.html.html">
+    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://kurutepe.com/feed.xml">
+</head>
+
+    <body>
+        <header>
+    <div class="container">
+        <div class="intro">
+            <p class="intro__pre">Hello</p>
+            <p class="intro__main">My name is <span>Engin Kurutepe</span>, a mobile product consultant</p>
+            <p class="intro__post"></p>
+        </div>
+        <nav>
+          <ul>
+            
+            <li><a href="/about/">About</a></li>
+            
+            <li><a href="/blog/">Blog</a></li>
+            
+            <li><a href="/feed.xml"></a></li>
+            
+            <li><a href="/"></a></li>
+            
+            <li><a href="/css/main.css"></a></li>
+            
+          </ul>
+        </nav>
+    </div>
+</header>
+
+        <div class="container">
+            
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <h1 class="post-title" itemprop="name headline">View Controller Containers and Status Bar Style</h1>
+    <p class="post-meta"><time datetime="2013-11-02T01:00:00+01:00" itemprop="datePublished">Nov 2, 2013</time><!--  • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Engin Kurutepe</span></span></p> -->
+
+  <div class="post-content" itemprop="articleBody">
+    <p>One of the changes in iOS 7 is the new method of determining the status bar style through the <code class="highlighter-rouge">preferredStatusBarStyle</code> method.</p>
+
+<p>The basic idea is quite simple: the system asks the current view controller for the preferred style by calling <code class="highlighter-rouge">preferredStatusBarStyle</code> whenever a status bar update is triggered. In the case of a container view controller, the container can forward the call to a child view controller by implementing the <code class="highlighter-rouge">childViewControllerForStatusBarStyle:</code> method and returning the child view controller which should receive the <code class="highlighter-rouge">preferredStatusBarStyle</code> message. If <code class="highlighter-rouge">childViewControllerForStatusBarStyle:</code> returns <code class="highlighter-rouge">nil</code> or is not implemented at all, the container view controller itself is expected to return a preferred status bar style.</p>
+
+<p>This is all well and good, but Apple decided not to implement <code class="highlighter-rouge">childViewControllerForStatusBarStyle:</code> for UINavigationController and UITabBarController, preventing the view controllers contained in these controllers from determining the preferred status bar style.</p>
+
+<p>However, this can easily be added by creating categories for implementing <code class="highlighter-rouge">childViewControllerForStatusBarStyle:</code>.</p>
+
+<p>Here is how this can be implemented for UITabBarController:</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UITabBarController</span> <span class="p">(</span><span class="nl">StatusBarStyle</span><span class="p">)</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="n">childViewControllerForStatusBarStyle</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">selectedViewController</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>And UINavigationController:</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UINavigationController</span> <span class="p">(</span><span class="nl">StatusBarStyle</span><span class="p">)</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="n">childViewControllerForStatusBarStyle</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">topViewController</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>When you include these categories in your project, your navigation and tab bar controllers will enable their selected and top view controllers to control the status bar style. If you use this approach it is a good idea to call <code class="highlighter-rouge">[self setNeedsStatusBarAppearanceUpdate]</code> in your view controller’s <code class="highlighter-rouge">viewDidAppear:</code> to make sure that your <code class="highlighter-rouge">preferredStatusBarStyle</code> method gets called.</p>
+
+  </div>
+
+</article>
+
+        </div>
+        <footer class="footer">
+        
+        <div class="social">
+            <a href="http://github.com/ekurutepe" target="_blank">GitHub</a>
+            <a href="http://twitter.com/ekurutepe" target="_blank">Twitter</a>
+            <a href="mailto:" target="_blank">Email</a>
+        </div>
+        
+</footer>
+
+    </body>
+</html>

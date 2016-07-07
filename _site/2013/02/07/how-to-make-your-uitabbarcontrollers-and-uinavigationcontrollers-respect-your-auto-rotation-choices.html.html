@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>How to make your UITabBarControllers and UINavigationControllers respect your auto-rotation choices</title>
+    <meta name="description" content="iOS 6 introduced many changes related to view auto-rotation, which basically aim to decouple view controller orientation from the device orientation. While t...">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://kurutepe.com/2013/02/07/how-to-make-your-uitabbarcontrollers-and-uinavigationcontrollers-respect-your-auto-rotation-choices.html.html">
+    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://kurutepe.com/feed.xml">
+</head>
+
+    <body>
+        <header>
+    <div class="container">
+        <div class="intro">
+            <p class="intro__pre">Hello</p>
+            <p class="intro__main">My name is <span>Engin Kurutepe</span>, a mobile product consultant</p>
+            <p class="intro__post"></p>
+        </div>
+        <nav>
+          <ul>
+            
+            <li><a href="/about/">About</a></li>
+            
+            <li><a href="/blog/">Blog</a></li>
+            
+            <li><a href="/feed.xml"></a></li>
+            
+            <li><a href="/"></a></li>
+            
+            <li><a href="/css/main.css"></a></li>
+            
+          </ul>
+        </nav>
+    </div>
+</header>
+
+        <div class="container">
+            
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <h1 class="post-title" itemprop="name headline">How to make your UITabBarControllers and UINavigationControllers respect your auto-rotation choices</h1>
+    <p class="post-meta"><time datetime="2013-02-07T01:00:00+01:00" itemprop="datePublished">Feb 7, 2013</time><!--  • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Engin Kurutepe</span></span></p> -->
+
+  <div class="post-content" itemprop="articleBody">
+    <p>iOS 6 introduced many changes related to view auto-rotation, which basically aim to decouple view controller orientation from the device orientation. While this might sound counter-intuitive, it actually makes a lot of sense and allows for a finer grained control of view controller orientations: A <code class="highlighter-rouge">UITableViewController</code> in portrait orientation in a pop over contained by a view controller in landscape orientation on an iPad, for instance.</p>
+
+<p>However the <code class="highlighter-rouge">UINavigationController</code> and <code class="highlighter-rouge">UITabBarController</code> do not seem to be implementing the new <code class="highlighter-rouge">shouldAutorotate</code> and <code class="highlighter-rouge">supportedInterfaceOrientations</code> APIs as expected: regardless of the values returned by your view controllers, they always allow any orientation!</p>
+
+<p>The fix, fortunately, is quite simple and can be added to the standard <code class="highlighter-rouge">UINavigationController</code> and <code class="highlighter-rouge">UITabBarController</code> with a simple category, which forwards the values set by the <code class="highlighter-rouge">topViewController</code> and <code class="highlighter-rouge">selectedViewController</code> respectively.</p>
+
+<p>Here are the two categories you can add at the beginning of your app delegate:</p>
+
+<p><code class="highlighter-rouge">UITabBarController</code></p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UITabBarController</span> <span class="p">(</span><span class="nl">AutoRotationForwarding</span><span class="p">)</span>
+
+<span class="k">-</span><span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">shouldAutorotate</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">([</span><span class="n">self</span><span class="p">.</span><span class="n">selectedViewController</span> <span class="nf">respondsToSelector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">shouldAutorotate</span><span class="p">)])</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">selectedViewController</span> <span class="nf">shouldAutorotate</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="n">supportedInterfaceOrientations</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">([</span><span class="n">self</span><span class="p">.</span><span class="n">selectedViewController</span> <span class="nf">respondsToSelector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">supportedInterfaceOrientations</span><span class="p">)])</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">selectedViewController</span> <span class="nf">supportedInterfaceOrientations</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">UIInterfaceOrientationMaskAll</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>and <code class="highlighter-rouge">UINavigationController</code></p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UINavigationController</span> <span class="p">(</span><span class="nl">AutoRotationForwarding</span><span class="p">)</span>
+
+<span class="k">-</span><span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">shouldAutorotate</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">([</span><span class="n">self</span><span class="p">.</span><span class="n">topViewController</span> <span class="nf">respondsToSelector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">shouldAutorotate</span><span class="p">)])</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">topViewController</span> <span class="nf">shouldAutorotate</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">-</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span> <span class="n">supportedInterfaceOrientations</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">([</span><span class="n">self</span><span class="p">.</span><span class="n">topViewController</span> <span class="nf">respondsToSelector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">supportedInterfaceOrientations</span><span class="p">)])</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">topViewController</span> <span class="nf">supportedInterfaceOrientations</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">UIInterfaceOrientationMaskPortrait</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>Hope this helps somebody</p>
+
+  </div>
+
+</article>
+
+        </div>
+        <footer class="footer">
+        
+        <div class="social">
+            <a href="http://github.com/ekurutepe" target="_blank">GitHub</a>
+            <a href="http://twitter.com/ekurutepe" target="_blank">Twitter</a>
+            <a href="mailto:" target="_blank">Email</a>
+        </div>
+        
+</footer>
+
+    </body>
+</html>

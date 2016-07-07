@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Speech Synthesis on iOS 7</title>
+    <meta name="description" content="One of the new APIs introduced with iOS 7 is the new speech synthesizer in the AVFoundation framework. It went relatively unnoticed among the flood of more s...">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://kurutepe.com/2014/01/09/speech-synthesis-on-ios-7.html.html">
+    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://kurutepe.com/feed.xml">
+</head>
+
+    <body>
+        <header>
+    <div class="container">
+        <div class="intro">
+            <p class="intro__pre">Hello</p>
+            <p class="intro__main">My name is <span>Engin Kurutepe</span>, a mobile product consultant</p>
+            <p class="intro__post"></p>
+        </div>
+        <nav>
+          <ul>
+            
+            <li><a href="/about/">About</a></li>
+            
+            <li><a href="/blog/">Blog</a></li>
+            
+            <li><a href="/feed.xml"></a></li>
+            
+            <li><a href="/"></a></li>
+            
+            <li><a href="/css/main.css"></a></li>
+            
+          </ul>
+        </nav>
+    </div>
+</header>
+
+        <div class="container">
+            
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <h1 class="post-title" itemprop="name headline">Speech Synthesis on iOS 7</h1>
+    <p class="post-meta"><time datetime="2014-01-09T01:00:00+01:00" itemprop="datePublished">Jan 9, 2014</time><!--  • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Engin Kurutepe</span></span></p> -->
+
+  <div class="post-content" itemprop="articleBody">
+    <p>One of the new APIs introduced with iOS 7 is the new <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/Reference/Reference.html">speech synthesizer</a> in the AVFoundation framework. It went relatively unnoticed among the flood of more significant changes in iOS 7.</p>
+
+<p>I recently received a review for my app <a href="https://itunes.apple.com/us/app/the-seven-minute-workout/id650872326?mt=8&amp;uo=4">The Seven Minute Workout</a> asking for spoken announcement of exercises before they start. What a nice idea, I thought let me record somebody (read: a native speaker, preferably female) saying the names of the exercises, add the audio files to the app bundle and play them when appropriate. Then a Eureka moment came: speech synthesis!</p>
+
+<p>After a bit of Googling and finding out about the new Apple Speech Synthesizer, the documentation for the API was quite straight-forward. There are two classes involved in making your iPhone speak: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/Reference/Reference.html"><code class="highlighter-rouge">AVSpeechUtterance</code></a> which represents what is being said and <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/Reference/Reference.html"><code class="highlighter-rouge">AVSpeechSynthesizer</code></a> which does the speaking itself.</p>
+
+<p>Here is some simple example code:</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code>    <span class="n">AVSpeechUtterance</span> <span class="o">*</span><span class="n">utterance</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVSpeechUtterance</span> <span class="nf">speechUtteranceWithString</span><span class="p">:</span><span class="err">@</span><span class="o">&amp;</span><span class="n">quot</span><span class="err">;</span><span class="n">Hello</span> <span class="n">World</span><span class="o">!&amp;</span><span class="n">quot</span><span class="err">;</span><span class="p">];</span>
+    <span class="n">utterance</span><span class="p">.</span><span class="n">voice</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVSpeechSynthesisVoice</span> <span class="nf">voiceWithLanguage</span><span class="p">:</span><span class="err">@</span><span class="o">&amp;</span><span class="n">quot</span><span class="err">;</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="o">&amp;</span><span class="n">quot</span><span class="err">;</span><span class="p">];</span>
+    <span class="n">utterance</span><span class="p">.</span><span class="n">rate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">70</span><span class="o">*</span><span class="n">AVSpeechUtteranceDefaultSpeechRate</span><span class="p">;</span>
+
+    <span class="n">AVSpeechSynthesizer</span> <span class="o">*</span><span class="n">synth</span> <span class="o">=</span> <span class="p">[[</span><span class="n">AVSpeechSynthesizer</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">synth</span> <span class="nf">speakUtterance</span><span class="p">:</span><span class="n">utterance</span><span class="p">];</span>
+</code></pre>
+</div>
+
+<p>The code itself is pretty straight-forward. The only important detail that you should pay attention is to use the correct voice, which defaults to the locale specific language and the speed of the utterance, which is probably optimized for turn-by-turn navigation was way too fast for the purposes of <a href="https://itunes.apple.com/us/app/the-seven-minute-workout/id650872326?mt=8&amp;uo=4">The Seven Minute Workout</a>.</p>
+
+  </div>
+
+</article>
+
+        </div>
+        <footer class="footer">
+        
+        <div class="social">
+            <a href="http://github.com/ekurutepe" target="_blank">GitHub</a>
+            <a href="http://twitter.com/ekurutepe" target="_blank">Twitter</a>
+            <a href="mailto:" target="_blank">Email</a>
+        </div>
+        
+</footer>
+
+    </body>
+</html>
