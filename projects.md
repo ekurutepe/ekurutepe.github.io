@@ -3,7 +3,7 @@ layout: default
 title: Projects
 ---
 
-Here is a list of a few selected projects I've been lucky enough to be involved with:
+Here is a list of selected projects I've been lucky enough to be involved with in the recent years:
 
 {% for project in site.data.projects %}
 
