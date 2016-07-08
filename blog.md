@@ -6,7 +6,7 @@ permalink: /blog/
 
 {% for post in site.posts %}
 
-<div class="post_summary">
+<div class="post-summary">
   
 ### [{{ post.title }}]({{ post.url | prepend: site.baseurl }})
 

@@ -100,6 +100,7 @@ a {
     color: $brand-color;
     transition: all linear .2s;
     text-decoration: none;
+    font-weight: 600;
     padding: 1px 2px;
     &:hover {
         background: lighten($brand-color, 60%);
@@ -155,7 +156,7 @@ pre {
     }
 }
 
-.post_summary {
+.post-summary, .project-container {
   border-bottom: 0.5px solid $brand-color;
   padding-bottom: 1em;
   padding-top: 1em;
@@ -187,8 +188,8 @@ nav, .footer {
 .li-img img {
   display: block;
   object-fit: contain;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: auto;
 }
 .li-text {
   display: table-cell;

@@ -74,6 +74,7 @@ a {
   color: #371989;
   transition: all linear .2s;
   text-decoration: none;
+  font-weight: 600;
   padding: 1px 2px; }
   a:hover {
     background: #e3dbf9;
@@ -116,7 +117,7 @@ pre {
     padding-right: 0;
     padding-left: 0; }
 
-.post_summary {
+.post-summary, .project-container {
   border-bottom: 0.5px solid #371989;
   padding-bottom: 1em;
   padding-top: 1em; }
@@ -141,8 +142,8 @@ nav a, .footer a {
 .li-img img {
   display: block;
   object-fit: contain;
-  width: 160px;
-  height: 160px; }
+  width: 200px;
+  height: auto; }
 
 .li-text {
   display: table-cell;

@@ -3,6 +3,8 @@ layout: default
 title: Projects
 ---
 
+Here is a list of a few selected projects I've been lucky enough to be involved with:
+
 {% for project in site.data.projects %}
 
 <div class="project-container">
