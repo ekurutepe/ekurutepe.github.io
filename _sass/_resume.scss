@@ -23,13 +23,3 @@ dt, dd {
     font-size: 1.2rem;
 }
 
-a {
-    color: $brand-color;
-    transition: all linear .2s;
-
-    &:hover {
-        background: lighten($brand-color, 60%);
-        color: darken($brand-color, 10%);
-        text-decoration: none;
-    }
-}
