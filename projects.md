@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Projects
+permalink: /projects
 ---
 
 Here is a list of selected projects I've been lucky enough to be involved with in the recent years:

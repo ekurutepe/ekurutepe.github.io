@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About
+permanlink: index.html
 ---
 
 ### Hello there!
@@ -14,7 +15,7 @@ My name is Engin Kurutepe. I've been shipping apps since the first iPhone SDK ca
 
 Please [contact me](mailto:engin@kurutepe.com) for inquiries. Also happy to grab a coffee to discuss your project if you are in Berlin.
 
-I recently started [AppCare](https://appcare.io), a subscription service for app maintenance. If your own an app in maintanence mode which generates revenue and/or supports another business, [contact me](mailto:engin@kurutepe.com) me to discuss opportunities on how we can help you improve your ROI.
+I recently started [AppCare](https://appcare.io), a subscription service for app maintenance. If you own an app in maintanence mode which generates revenue and/or supports another business, [contact me](mailto:engin@kurutepe.com) me to discuss opportunities on how we can help you improve your ROI and extend the life of your app.
 
 I believe in contributing our community and I've been co-organizing [UIKonf](http://www.uikonf.com), an independent conference for serious developers since 2015.
 
