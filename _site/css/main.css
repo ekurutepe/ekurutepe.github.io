@@ -1,7 +1,6 @@
 /**
  * Reset some basic elements
  */
-@import url(https://fonts.googleapis.com/css?family=Lora:400,700|Playfair+Display:400,700,900);
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -12,7 +11,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 17px/1.5 "Lora", Helvetica, Arial, sans-serif;
+  font: 400 18px/1.5 "yrsa", serif;
   color: #111;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -21,6 +20,9 @@ body {
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
   font-kerning: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "adobe-caslon-pro", serif; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -49,7 +51,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 14.875px; }
+  font-size: 15.75px; }
 
 /**
  * Lists
@@ -74,12 +76,10 @@ a {
   color: #371989;
   transition: all linear .2s;
   text-decoration: none;
-  font-weight: 600;
   padding: 1px 2px; }
   a:hover {
-    background: #e3dbf9;
     color: #26115e;
-    text-decoration: none; }
+    text-decoration: underline; }
   a:visited {
     color: #2e1573; }
 
@@ -104,7 +104,7 @@ code {
   font-size: 15px;
   border: none;
   border-radius: 3px;
-  background-color: #f4f1fc; }
+  background-color: #f2f2f2; }
 
 code {
   padding: 1px 5px; }
@@ -209,18 +209,19 @@ nav a, .footer a {
     background: #222; }
 
 body {
-  font-family: "Lora", Helvetica, Arial, sans-serif, serif;
-  font-size: 17px;
+  font-family: "yrsa", serif, sans-serif;
+  font-size: 18px;
   line-height: 1.4; }
 
 header {
-  border-bottom: 1px solid #edefee;
+  font-family: "adobe-caslon-pro", serif;
+  border-bottom: 4px solid #371989;
   padding: 40px 0;
   margin-bottom: 40px; }
   @media (min-width: 640px) {
     header {
-      padding: 200px 0 60px;
-      margin-bottom: 60px; } }
+      padding: 200px 0 20px;
+      margin-bottom: 40px; } }
 
 .intro {
   margin-bottom: 40px; }
@@ -235,7 +236,7 @@ header {
     @media (min-width: 640px) {
       .intro__main {
         font-size: 2.2rem;
-        max-width: 60%; } }
+        max-width: 50%; } }
 
 .social a {
   margin-right: 20px; }
@@ -243,28 +244,12 @@ header {
 .footer {
   padding: 40px 20px;
   text-align: center;
-  border-top: 1px solid #edefee; }
+  border-top: 1px solid #edefee;
+  font-family: "adobe-caslon-pro", serif; }
   .footer__title {
-    font-size: 1.2rem;
-    font-weight: bold; }
+    font-size: 1.2rem; }
   .footer__subtitle {
     text-transform: capitalize; }
-
-dl {
-  margin-bottom: 20px; }
-
-dt, dd {
-  display: inline-block;
-  vertical-align: top;
-  margin-bottom: 20px; }
-
-@media (min-width: 640px) {
-  dt, dd {
-    margin-bottom: 60px; } }
-.title {
-  margin: 0;
-  font-weight: bold;
-  font-size: 1.2rem; }
 
 /**
  * Syntax highlighting styles
@@ -272,7 +257,7 @@ dt, dd {
 .highlight {
   background: #fff; }
   .highlighter-rouge .highlight {
-    background: #f4f1fc; }
+    background: #f2f2f2; }
   .highlight .c {
     color: #998;
     font-style: italic; }

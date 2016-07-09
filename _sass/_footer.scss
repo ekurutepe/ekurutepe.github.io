@@ -5,10 +5,10 @@
     padding: ($spacer * 2) $spacer;
     text-align: center;
     border-top: 1px solid #edefee;
-
+    font-family: $title-font-family;
+    
     &__title {
         font-size: 1.2rem;
-        font-weight: bold;
     }
 
     &__subtitle {
