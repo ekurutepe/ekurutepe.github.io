@@ -6,8 +6,10 @@
 
 
 // Our variables
-$base-font-family: "Lora", Helvetica, Arial, sans-serif;
-$base-font-size:   17px;
+$base-font-family: 'yrsa', serif;
+$title-font-family: 'adobe-caslon-pro', serif;
+
+$base-font-size:   18px;
 $base-font-weight: 400;
 $strong-font-weight: $base-font-weight * 1.5;
 $small-font-size:  $base-font-size * 0.875;
@@ -19,9 +21,11 @@ $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      #371989;
 
+
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+$code-background-color: lighten($grey-color, 44%);
 
 // Width of the content area
 $content-width:    800px;
@@ -53,6 +57,5 @@ $on-laptop:        800px;
     "typography",
     "header",
     "footer",
-    "resume",
     "syntax-highlighting"
 ;
