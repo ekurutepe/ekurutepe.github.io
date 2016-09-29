@@ -13,14 +13,14 @@
 - title: Iguazu
   url: https://github.com/ekurutepe/Iguazu
   responsibilities: "Creator"
-  image: 
+  image: assets/iguazu.jpg
   description: "[Iguazu](https://github.com/ekurutepe/Iguazu) is a an open source IGC serialization/deserialization framework written in Swift 3.0, very much a work in progress. [IGC file format](http://carrier.csi.cam.ac.uk/forsterlewis/soaring/igc_file_format/igc_format_2008.html) is used for recording glider flights and is defacto standard for gliding competitions."
 
 - title: Blur
   url: https://www.blurmessage.com
   responsibilities: "iOS development, iMessage App"
   image: assets/blur.png
-  description: "Blur started out as an exploratory skunk works project to find out what is possible with the new iMessage extensions. I implemented the first version of the app and prototyped the required backend functionalities. After the potential of the idea was evident, the prototype was prepared quickly for the first release in close collaboration with the team in San Francisco and made it into the App Store on the launch day of iOS 10."
+  description: "[Blur](https://www.blurmessage.com) started out as an exploratory skunk works project to find out what is possible with the new iMessage extensions. I implemented the first version of the app and prototyped the required backend functionalities. After the potential of the idea was evident, the prototype was prepared quickly for the first release in close collaboration with the team in San Francisco and made it into the App Store on the launch day of iOS 10."
 
 - title: Automatic
   url: http://www.automatic.com
