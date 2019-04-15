@@ -9,8 +9,8 @@
     <meta name="description" content="One of the changes in iOS 7 is the new method of determining the status bar style through the preferredStatusBarStyle method.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://kurutepe.com/2013/11/02/view-controller-containers-and-status-bar-style.html.html">
-    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://kurutepe.com/feed.xml">
+    <link rel="canonical" href="http://localhost:4000/2013/11/02/view-controller-containers-and-status-bar-style.html.html">
+    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://localhost:4000/feed.xml">
     <script src="https://use.typekit.net/ixz3dcs.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
@@ -19,14 +19,13 @@
         <header>
     <div class="container">
         <div class="intro">
-            <p class="intro__main">My name is <span>Engin Kurutepe</span> and I am a mobile product expert</p>
-            <p class="intro__post"></p>
+            <p class="intro__main">My name is Engin Kurutepe and I make useful apps</p>
         </div>
         <nav>
           <ul>
-            <li><a href="/">About</a></li>
+            <li><a href="/">Blog</a></li>
             <li><a href="/projects">Projects</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </nav>
     </div>
@@ -51,23 +50,21 @@
 
 <p>Here is how this can be implemented for UITabBarController:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UITabBarController</span> <span class="p">(</span><span class="nl">StatusBarStyle</span><span class="p">)</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UITabBarController</span> <span class="p">(</span><span class="nl">StatusBarStyle</span><span class="p">)</span>
 <span class="k">-</span> <span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="n">childViewControllerForStatusBarStyle</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">selectedViewController</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">@end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And UINavigationController:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UINavigationController</span> <span class="p">(</span><span class="nl">StatusBarStyle</span><span class="p">)</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UINavigationController</span> <span class="p">(</span><span class="nl">StatusBarStyle</span><span class="p">)</span>
 <span class="k">-</span> <span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="n">childViewControllerForStatusBarStyle</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">topViewController</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">@end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>When you include these categories in your project, your navigation and tab bar controllers will enable their selected and top view controllers to control the status bar style. If you use this approach it is a good idea to call <code class="highlighter-rouge">[self setNeedsStatusBarAppearanceUpdate]</code> in your view controller’s <code class="highlighter-rouge">viewDidAppear:</code> to make sure that your <code class="highlighter-rouge">preferredStatusBarStyle</code> method gets called.</p>
 

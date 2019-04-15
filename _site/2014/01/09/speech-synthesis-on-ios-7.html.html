@@ -9,8 +9,8 @@
     <meta name="description" content="One of the new APIs introduced with iOS 7 is the new speech synthesizer in the AVFoundation framework. It went relatively unnoticed among the flood of more s...">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://kurutepe.com/2014/01/09/speech-synthesis-on-ios-7.html.html">
-    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://kurutepe.com/feed.xml">
+    <link rel="canonical" href="http://localhost:4000/2014/01/09/speech-synthesis-on-ios-7.html.html">
+    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://localhost:4000/feed.xml">
     <script src="https://use.typekit.net/ixz3dcs.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
@@ -19,14 +19,13 @@
         <header>
     <div class="container">
         <div class="intro">
-            <p class="intro__main">My name is <span>Engin Kurutepe</span> and I am a mobile product expert</p>
-            <p class="intro__post"></p>
+            <p class="intro__main">My name is Engin Kurutepe and I make useful apps</p>
         </div>
         <nav>
           <ul>
-            <li><a href="/">About</a></li>
+            <li><a href="/">Blog</a></li>
             <li><a href="/projects">Projects</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </nav>
     </div>
@@ -49,14 +48,13 @@
 
 <p>Here is some simple example code:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code>    <span class="n">AVSpeechUtterance</span> <span class="o">*</span><span class="n">utterance</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVSpeechUtterance</span> <span class="nf">speechUtteranceWithString</span><span class="p">:</span><span class="err">@</span><span class="o">&amp;</span><span class="n">quot</span><span class="err">;</span><span class="n">Hello</span> <span class="n">World</span><span class="o">!&amp;</span><span class="n">quot</span><span class="err">;</span><span class="p">];</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">AVSpeechUtterance</span> <span class="o">*</span><span class="n">utterance</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVSpeechUtterance</span> <span class="nf">speechUtteranceWithString</span><span class="p">:</span><span class="err">@</span><span class="o">&amp;</span><span class="n">quot</span><span class="err">;</span><span class="n">Hello</span> <span class="n">World</span><span class="o">!&amp;</span><span class="n">quot</span><span class="err">;</span><span class="p">];</span>
     <span class="n">utterance</span><span class="p">.</span><span class="n">voice</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVSpeechSynthesisVoice</span> <span class="nf">voiceWithLanguage</span><span class="p">:</span><span class="err">@</span><span class="o">&amp;</span><span class="n">quot</span><span class="err">;</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="o">&amp;</span><span class="n">quot</span><span class="err">;</span><span class="p">];</span>
     <span class="n">utterance</span><span class="p">.</span><span class="n">rate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">70</span><span class="o">*</span><span class="n">AVSpeechUtteranceDefaultSpeechRate</span><span class="p">;</span>
 
     <span class="n">AVSpeechSynthesizer</span> <span class="o">*</span><span class="n">synth</span> <span class="o">=</span> <span class="p">[[</span><span class="n">AVSpeechSynthesizer</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
     <span class="p">[</span><span class="n">synth</span> <span class="nf">speakUtterance</span><span class="p">:</span><span class="n">utterance</span><span class="p">];</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The code itself is pretty straight-forward. The only important detail that you should pay attention is to use the correct voice, which defaults to the locale specific language and the speed of the utterance, which is probably optimized for turn-by-turn navigation was way too fast for the purposes of <a href="https://itunes.apple.com/us/app/the-seven-minute-workout/id650872326?mt=8&amp;uo=4">The Seven Minute Workout</a>.</p>
 

@@ -9,8 +9,8 @@
     <meta name="description" content="iOS 7 introduced a layered design language where the system achieved to create the illusion of three dimensionality by moving views on screen with the moveme...">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://kurutepe.com/2015/02/17/parallax-scrolling-as-a-category-on-uicollectionview.html.html">
-    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://kurutepe.com/feed.xml">
+    <link rel="canonical" href="http://localhost:4000/2015/02/17/parallax-scrolling-as-a-category-on-uicollectionview.html.html">
+    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://localhost:4000/feed.xml">
     <script src="https://use.typekit.net/ixz3dcs.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
@@ -19,14 +19,13 @@
         <header>
     <div class="container">
         <div class="intro">
-            <p class="intro__main">My name is <span>Engin Kurutepe</span> and I am a mobile product expert</p>
-            <p class="intro__post"></p>
+            <p class="intro__main">My name is Engin Kurutepe and I make useful apps</p>
         </div>
         <nav>
           <ul>
-            <li><a href="/">About</a></li>
+            <li><a href="/">Blog</a></li>
             <li><a href="/projects">Projects</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </nav>
     </div>
@@ -61,8 +60,8 @@
 
 <p>Here is the header for the <code>ParallaxScroll</code> category:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">//UICollectionViewController+ParallaxScroll.h
-</span><span class="k">@import</span> <span class="n">UIKit</span><span class="p">;</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//UICollectionViewController+ParallaxScroll.h</span>
+<span class="k">@import</span> <span class="n">UIKit</span><span class="p">;</span>
 
 <span class="k">@protocol</span> <span class="nc">UICollectionViewCellParallax</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span>
 
@@ -74,14 +73,13 @@
 
 <span class="k">@end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It declares an informal protocol with a single method <code>updateWithParallaxOffset:</code>, which we will later implement in our collection view cells which should have parallax scroll.</p>
 
 <p>And the implementation contains a single method:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">scrollViewDidScroll</span><span class="p">:(</span><span class="n">UIScrollView</span> <span class="o">*</span><span class="p">)</span><span class="nv">scrollView</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">scrollViewDidScroll</span><span class="p">:(</span><span class="n">UIScrollView</span> <span class="o">*</span><span class="p">)</span><span class="nv">scrollView</span> <span class="p">{</span>
     <span class="n">NSArray</span> <span class="o">*</span><span class="n">visibleCells</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">collectionView</span><span class="p">.</span><span class="n">visibleCells</span><span class="p">;</span>
     
     <span class="k">for</span> <span class="p">(</span><span class="n">UICollectionViewCell</span> <span class="o">*</span><span class="n">cell</span> <span class="k">in</span> <span class="n">visibleCells</span><span class="p">)</span> <span class="p">{</span>
@@ -104,16 +102,14 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Since the <code>scrollViewDidScroll:</code> is implemented at the <code>UICollectionViewController</code> level all of its subclasses in our app are going to be able to handle parallax scroll. On the other hand, we can implement <code>scrollViewDidScroll:</code> in the subclasses and still retain the parallax scrolling as long as the child implementations call <code>[super scrollViewDidScroll:]</code>.  The informal protocol <code>UICollectionViewCellParallax</code> is central to how this approach works. Parallax scrolling can be selectively turned on and off by implementing the <code>updateWithParallaxOffset:</code> or not in a <code>UICollectionViewCell</code> subclass. For a simple photo cell, <code>updateWithParallaxOffset:</code> can be as simple as moving the image view accordingly:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">updateWithParallaxOffset</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">offset</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">updateWithParallaxOffset</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">offset</span> <span class="p">{</span>
     <span class="n">self</span><span class="p">.</span><span class="n">imageViewCenterYConstraint</span><span class="p">.</span><span class="n">constant</span> <span class="o">=</span> <span class="n">offset</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>By implementing parallax scroll with a category and an informal protocol, we get the best of both approaches: the scrolling stays very smooth because the layout does not get recomputed at every scroll position, which might be expensive, and we do get to cleanly separate parallax scroll from the rest of our view controller code in its separate location.</p>
 

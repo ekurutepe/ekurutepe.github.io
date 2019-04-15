@@ -9,8 +9,8 @@
     <meta name="description" content="The frosted glass effect is a central design element in iOS 7 and there are various ways how you can add it to views in your app. I have been working a lot w...">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://kurutepe.com/2014/04/12/how-to-implement-the-frosted-glass-effect-in-ios.html.html">
-    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://kurutepe.com/feed.xml">
+    <link rel="canonical" href="http://localhost:4000/2014/04/12/how-to-implement-the-frosted-glass-effect-in-ios.html.html">
+    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://localhost:4000/feed.xml">
     <script src="https://use.typekit.net/ixz3dcs.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
@@ -19,14 +19,13 @@
         <header>
     <div class="container">
         <div class="intro">
-            <p class="intro__main">My name is <span>Engin Kurutepe</span> and I am a mobile product expert</p>
-            <p class="intro__post"></p>
+            <p class="intro__main">My name is Engin Kurutepe and I make useful apps</p>
         </div>
         <nav>
           <ul>
-            <li><a href="/">About</a></li>
+            <li><a href="/">Blog</a></li>
             <li><a href="/projects">Projects</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </nav>
     </div>
@@ -47,7 +46,7 @@
 
 <p>A better approach is to take advantage of the <code class="highlighter-rouge">drawViewHierarchyInRect:afterScreenUpdates:</code> method in <code class="highlighter-rouge">UIView</code> to efficiently capture an image of the background and use the <code class="highlighter-rouge">UIImage+ImageEffects</code> category by Apple to obtain a customized blur effect to achieve the frosted glass effect. This is best achieved in the <code class="highlighter-rouge">willMoveToSuperview:</code> method of a <code class="highlighter-rouge">UIView</code> subclass which implements the frosted glass effect:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">willMoveToSuperview</span><span class="p">:(</span><span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">newSuperview</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">willMoveToSuperview</span><span class="p">:(</span><span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">newSuperview</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="n">super</span> <span class="nf">willMoveToSuperview</span><span class="p">:</span><span class="n">newSuperview</span><span class="p">];</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">newSuperview</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
@@ -64,8 +63,7 @@
                                        <span class="nl">saturationDeltaFactor:</span><span class="mi">1</span><span class="p">.</span><span class="mi">8</span>
                                                    <span class="nl">maskImage:</span><span class="nb">nil</span><span class="p">];</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Since the background is computed once the frosted glass view moves into a superview, changing the frame of the frosted glass view will destroy the illusion. So make sure that you use this trick only for views where you know the frame or the background will not be changing.</p>
 

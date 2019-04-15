@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blog
-permalink: /blog/
+permalink: /index.html
 ---
 
 {% for post in site.posts %}

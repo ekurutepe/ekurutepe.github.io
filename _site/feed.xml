@@ -4,11 +4,100 @@
     <title>Engin Kurutepe</title>
     <description>Engin Kurutepe. Mobile Product Consultant. iOS Developer. Based in Berlin.
 </description>
-    <link>http://kurutepe.com/</link>
-    <atom:link href="http://kurutepe.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jul 2016 14:11:12 +0200</pubDate>
-    <lastBuildDate>Sat, 09 Jul 2016 14:11:12 +0200</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 15 Apr 2019 15:24:09 +0200</pubDate>
+    <lastBuildDate>Mon, 15 Apr 2019 15:24:09 +0200</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Setting Up Your Amazon Echo Outside The US</title>
+        <description>&lt;p&gt;If you’re curious like me and ordered an Amazon Echo on a trip to the states, you will have noticed that Amazon’s setup interface does not allow you to enter non-US addresses for your Echo. Which is a double bummer, because the time zone cannot be set independently and is also determined by your address, making time and calendar based features totally userless in addition to weather and traffic.&lt;/p&gt;
+
+&lt;p&gt;But just because Amazon gave us no UI to enter non-US addresses, it does not mean that Echo does not work outside the US. I found some time to play around with the API the Echo device is communicating with and managed to set my address and time zone to Berlin and verified that address and time related functionalities are working as they should.&lt;/p&gt;
+
+&lt;p&gt;Here is an overview of how that works:&lt;/p&gt;
+
+&lt;p&gt;If you open the developer tools of Safari/Chrome and log the network requests while changing the address of your Echo at &lt;a href=&quot;https://alexa.amazon.com&quot;&gt;alexa.amazon.com&lt;/a&gt; you’ll notice that a &lt;code class=&quot;highlighter-rouge&quot;&gt;PUT&lt;/code&gt; request to &lt;code class=&quot;highlighter-rouge&quot;&gt;https://pitangui.amazon.com/api/device-preferences/&amp;lt;your-echo-serial-number&amp;gt;&lt;/code&gt; is logged when the address is changed. This request has a JSON body similar to this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  &quot;deviceAccountId&quot;: &amp;lt;your-device-account-id&amp;gt;,
+  &quot;deviceAddress&quot;:null,
+  &quot;deviceAddressModel&quot;:{
+    &quot;city&quot;:&quot;New York&quot;,
+    &quot;countryCode&quot;:&quot;US&quot;,
+    &quot;county&quot;:&quot;New York&quot;,
+    &quot;district&quot;:&quot;Theater District-Times Square&quot;,
+    &quot;houseNumber&quot;:null,
+    &quot;label&quot;:&quot;Times Sq, New York, NY 10036, United States&quot;,
+    &quot;postalCode&quot;:&quot;10036&quot;,
+    &quot;state&quot;:&quot;NY&quot;,
+    &quot;street&quot;:&quot;Times Sq&quot;
+  },
+  &quot;deviceSerialNumber&quot;: &amp;lt;your-device-serial-number&amp;gt;,
+  &quot;deviceType&quot;:&quot;AB72C64C86AW2&quot;,
+  &quot;firstRunCompleted&quot;:true,
+  &quot;notificationEarconEnabled&quot;:false,
+  &quot;postalCode&quot;:&quot;10036&quot;,
+  &quot;responseStyle&quot;:&quot;CONCISE&quot;,
+  &quot;searchCustomerId&quot;: &amp;lt;your-search-customer-id&amp;gt;,
+  &quot;temperatureScale&quot;:&quot;CELSIUS&quot;,
+  &quot;timeZoneId&quot;:null,
+  &quot;voiceCastEnabled&quot;:null,
+  &quot;autocastToThisClient&quot;:false,
+  &quot;isSaveInFlight&quot;:true
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This looks to be quite promising, since the address object has a full set of fields including country. Maybe we could set it to anywhere we’d like?&lt;/p&gt;
+
+&lt;p&gt;But before we get ahead of ourselves, let’s note that this request also has a bunch of headers and the following two are the important ones for authenticating your session with the Amazon API:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cookie: x-amzn-dat-gui-client-v=1.23.786.0; session-id=&amp;lt;rest-of-the-cookie-is-removed&amp;gt;
+csrf: &amp;lt;a-csrf-number&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Armed with these, we can copy the account and authenticated related fields and create a duplicate request with the same headers but with a differen JSON to see if the Amazon backend accepts our doctored request. I’ve used the great &lt;a href=&quot;https://luckymarmot.com/paw&quot;&gt;Paw&lt;/a&gt; app to build the HTTP requests but good old curl works just as fine.&lt;/p&gt;
+
+&lt;p&gt;Here is the JSON I used to set my address to Alexanderplatz in Berlin:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  …
+  &quot;deviceAddressModel&quot;: {
+    &quot;city&quot;: &quot;Berlin&quot;,
+    &quot;countryCode&quot;: &quot;DE&quot;,
+    &quot;county&quot;: &quot;Berlin&quot;,
+    &quot;district&quot;: null,
+    &quot;houseNumber&quot;: null,
+    &quot;label&quot;: &quot;Alexanderstrasse, Berlin, Germany&quot;,
+    &quot;postalCode&quot;: &quot;10178&quot;,
+    &quot;state&quot;: &quot;Berlin&quot;,
+    &quot;street&quot;: &quot;Alexanderstrasse&quot;
+  },
+  …
+  &quot;postalCode&quot;: &quot;10178&quot;,
+  …
+  &quot;timeZoneId&quot;: &quot;Europe/Berlin&quot;,
+  …
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Even if the Amazon API returns 200 OK, this does not necessarily mean that your request worked as you intended. You can ask Alexa &lt;code class=&quot;highlighter-rouge&quot;&gt;Which city are we in?&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Tell me the time&lt;/code&gt; to verify whether it worked or not. Sometimes it does not, and you need to change the fields a bit. It seems like the API is sensitive to what is in the &lt;code class=&quot;highlighter-rouge&quot;&gt;label&lt;/code&gt; field but it might have been just random. I was able to set my home address with a little bit of trial and error.&lt;/p&gt;
+
+&lt;p&gt;Hope this helps somebody…&lt;/p&gt;
+</description>
+        <pubDate>Sun, 17 Jul 2016 10:15:00 +0200</pubDate>
+        <link>http://localhost:4000/2016/07/17/Setting-up-Amazon-Echo-outside-the-US.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/07/17/Setting-up-Amazon-Echo-outside-the-US.html</guid>
+        
+        <category>echo,</category>
+        
+        <category>alexa,</category>
+        
+        <category>hack</category>
+        
+        
+      </item>
     
       <item>
         <title>Your first WWDC on a Budget</title>
@@ -47,8 +136,8 @@
 &lt;p&gt;Unfortunately I won’t be able to make it to WWDC this year but I plan to write a couple of posts about how to make the best of your WWDC experience over the next few weeks. Please &lt;a href=&quot;https://twitter.com/ekurutepe&quot;&gt;get in touch&lt;/a&gt; if you have specific questions or suggestions.&lt;/p&gt;
 </description>
         <pubDate>Wed, 20 Apr 2016 21:46:00 +0200</pubDate>
-        <link>http://kurutepe.com/2016/04/20/tips-for-your-first-wwdc.html.html</link>
-        <guid isPermaLink="true">http://kurutepe.com/2016/04/20/tips-for-your-first-wwdc.html.html</guid>
+        <link>http://localhost:4000/2016/04/20/tips-for-your-first-wwdc.html.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/04/20/tips-for-your-first-wwdc.html.html</guid>
         
         <category>wwdc</category>
         
@@ -67,8 +156,8 @@
 
 </description>
         <pubDate>Tue, 25 Aug 2015 17:27:00 +0200</pubDate>
-        <link>http://kurutepe.com/2015/08/25/a-new-beginning.html.html</link>
-        <guid isPermaLink="true">http://kurutepe.com/2015/08/25/a-new-beginning.html.html</guid>
+        <link>http://localhost:4000/2015/08/25/a-new-beginning.html.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/08/25/a-new-beginning.html.html</guid>
         
         <category>blog,</category>
         
@@ -99,8 +188,8 @@
 
 &lt;p&gt;Here is the header for the &lt;code&gt;ParallaxScroll&lt;/code&gt; category:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//UICollectionViewController+ParallaxScroll.h
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIKit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//UICollectionViewController+ParallaxScroll.h&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIKit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;@protocol&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UICollectionViewCellParallax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
 
@@ -112,14 +201,13 @@
 
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;It declares an informal protocol with a single method &lt;code&gt;updateWithParallaxOffset:&lt;/code&gt;, which we will later implement in our collection view cells which should have parallax scroll.&lt;/p&gt;
 
 &lt;p&gt;And the implementation contains a single method:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;scrollViewDidScroll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIScrollView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;scrollView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;scrollViewDidScroll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIScrollView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;scrollView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visibleCells&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visibleCells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     
     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UICollectionViewCell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visibleCells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -142,22 +230,20 @@
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Since the &lt;code&gt;scrollViewDidScroll:&lt;/code&gt; is implemented at the &lt;code&gt;UICollectionViewController&lt;/code&gt; level all of its subclasses in our app are going to be able to handle parallax scroll. On the other hand, we can implement &lt;code&gt;scrollViewDidScroll:&lt;/code&gt; in the subclasses and still retain the parallax scrolling as long as the child implementations call &lt;code&gt;[super scrollViewDidScroll:]&lt;/code&gt;.  The informal protocol &lt;code&gt;UICollectionViewCellParallax&lt;/code&gt; is central to how this approach works. Parallax scrolling can be selectively turned on and off by implementing the &lt;code&gt;updateWithParallaxOffset:&lt;/code&gt; or not in a &lt;code&gt;UICollectionViewCell&lt;/code&gt; subclass. For a simple photo cell, &lt;code&gt;updateWithParallaxOffset:&lt;/code&gt; can be as simple as moving the image view accordingly:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;updateWithParallaxOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;offset&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;updateWithParallaxOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;offset&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageViewCenterYConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;constant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;By implementing parallax scroll with a category and an informal protocol, we get the best of both approaches: the scrolling stays very smooth because the layout does not get recomputed at every scroll position, which might be expensive, and we do get to cleanly separate parallax scroll from the rest of our view controller code in its separate location.&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Feb 2015 01:00:00 +0100</pubDate>
-        <link>http://kurutepe.com/2015/02/17/parallax-scrolling-as-a-category-on-uicollectionview.html.html</link>
-        <guid isPermaLink="true">http://kurutepe.com/2015/02/17/parallax-scrolling-as-a-category-on-uicollectionview.html.html</guid>
+        <link>http://localhost:4000/2015/02/17/parallax-scrolling-as-a-category-on-uicollectionview.html.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/02/17/parallax-scrolling-as-a-category-on-uicollectionview.html.html</guid>
         
         <category>ios,</category>
         
@@ -176,7 +262,7 @@
 
 &lt;p&gt;A better approach is to take advantage of the &lt;code class=&quot;highlighter-rouge&quot;&gt;drawViewHierarchyInRect:afterScreenUpdates:&lt;/code&gt; method in &lt;code class=&quot;highlighter-rouge&quot;&gt;UIView&lt;/code&gt; to efficiently capture an image of the background and use the &lt;code class=&quot;highlighter-rouge&quot;&gt;UIImage+ImageEffects&lt;/code&gt; category by Apple to obtain a customized blur effect to achieve the frosted glass effect. This is best achieved in the &lt;code class=&quot;highlighter-rouge&quot;&gt;willMoveToSuperview:&lt;/code&gt; method of a &lt;code class=&quot;highlighter-rouge&quot;&gt;UIView&lt;/code&gt; subclass which implements the frosted glass effect:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;willMoveToSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;newSuperview&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;willMoveToSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;newSuperview&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;willMoveToSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newSuperview&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -193,16 +279,15 @@
                                        &lt;span class=&quot;nl&quot;&gt;saturationDeltaFactor:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
                                                    &lt;span class=&quot;nl&quot;&gt;maskImage:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Since the background is computed once the frosted glass view moves into a superview, changing the frame of the frosted glass view will destroy the illusion. So make sure that you use this trick only for views where you know the frame or the background will not be changing.&lt;/p&gt;
 
 &lt;p&gt;The source code for this simple frosted glass view is on &lt;a href=&quot;https://github.com/ekurutepe/iOS-Blur-Examples&quot;&gt;Github&lt;/a&gt;. In the next post in this series, I’ll show how this view can be extended to support changing the frame over a static background.&lt;/p&gt;
 </description>
         <pubDate>Sat, 12 Apr 2014 02:00:00 +0200</pubDate>
-        <link>http://kurutepe.com/2014/04/12/how-to-implement-the-frosted-glass-effect-in-ios.html.html</link>
-        <guid isPermaLink="true">http://kurutepe.com/2014/04/12/how-to-implement-the-frosted-glass-effect-in-ios.html.html</guid>
+        <link>http://localhost:4000/2014/04/12/how-to-implement-the-frosted-glass-effect-in-ios.html.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2014/04/12/how-to-implement-the-frosted-glass-effect-in-ios.html.html</guid>
         
         <category>ios,</category>
         
@@ -223,20 +308,19 @@
 
 &lt;p&gt;Here is some simple example code:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;AVSpeechUtterance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utterance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AVSpeechUtterance&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;speechUtteranceWithString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;World&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;AVSpeechUtterance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utterance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AVSpeechUtterance&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;speechUtteranceWithString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;World&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;utterance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;voice&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AVSpeechSynthesisVoice&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;voiceWithLanguage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;en&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;US&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quot&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;utterance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AVSpeechUtteranceDefaultSpeechRate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;AVSpeechSynthesizer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;synth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AVSpeechSynthesizer&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;synth&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;speakUtterance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utterance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The code itself is pretty straight-forward. The only important detail that you should pay attention is to use the correct voice, which defaults to the locale specific language and the speed of the utterance, which is probably optimized for turn-by-turn navigation was way too fast for the purposes of &lt;a href=&quot;https://itunes.apple.com/us/app/the-seven-minute-workout/id650872326?mt=8&amp;amp;uo=4&quot;&gt;The Seven Minute Workout&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 Jan 2014 01:00:00 +0100</pubDate>
-        <link>http://kurutepe.com/2014/01/09/speech-synthesis-on-ios-7.html.html</link>
-        <guid isPermaLink="true">http://kurutepe.com/2014/01/09/speech-synthesis-on-ios-7.html.html</guid>
+        <link>http://localhost:4000/2014/01/09/speech-synthesis-on-ios-7.html.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2014/01/09/speech-synthesis-on-ios-7.html.html</guid>
         
         <category>ios,</category>
         
@@ -259,29 +343,27 @@
 
 &lt;p&gt;Here is how this can be implemented for UITabBarController:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UITabBarController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;StatusBarStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UITabBarController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;StatusBarStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;childViewControllerForStatusBarStyle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectedViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And UINavigationController:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UINavigationController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;StatusBarStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UINavigationController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;StatusBarStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;childViewControllerForStatusBarStyle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;When you include these categories in your project, your navigation and tab bar controllers will enable their selected and top view controllers to control the status bar style. If you use this approach it is a good idea to call &lt;code class=&quot;highlighter-rouge&quot;&gt;[self setNeedsStatusBarAppearanceUpdate]&lt;/code&gt; in your view controller’s &lt;code class=&quot;highlighter-rouge&quot;&gt;viewDidAppear:&lt;/code&gt; to make sure that your &lt;code class=&quot;highlighter-rouge&quot;&gt;preferredStatusBarStyle&lt;/code&gt; method gets called.&lt;/p&gt;
 </description>
         <pubDate>Sat, 02 Nov 2013 01:00:00 +0100</pubDate>
-        <link>http://kurutepe.com/2013/11/02/view-controller-containers-and-status-bar-style.html.html</link>
-        <guid isPermaLink="true">http://kurutepe.com/2013/11/02/view-controller-containers-and-status-bar-style.html.html</guid>
+        <link>http://localhost:4000/2013/11/02/view-controller-containers-and-status-bar-style.html.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2013/11/02/view-controller-containers-and-status-bar-style.html.html</guid>
         
         <category>ios,</category>
         
@@ -304,7 +386,7 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UITabBarController&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UITabBarController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;AutoRotationForwarding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UITabBarController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;AutoRotationForwarding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shouldAutorotate&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -326,12 +408,11 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;and &lt;code class=&quot;highlighter-rouge&quot;&gt;UINavigationController&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UINavigationController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;AutoRotationForwarding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UINavigationController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;AutoRotationForwarding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shouldAutorotate&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -352,14 +433,13 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Hope this helps somebody&lt;/p&gt;
 </description>
         <pubDate>Thu, 07 Feb 2013 01:00:00 +0100</pubDate>
-        <link>http://kurutepe.com/2013/02/07/how-to-make-your-uitabbarcontrollers-and-uinavigationcontrollers-respect-your-auto-rotation-choices.html.html</link>
-        <guid isPermaLink="true">http://kurutepe.com/2013/02/07/how-to-make-your-uitabbarcontrollers-and-uinavigationcontrollers-respect-your-auto-rotation-choices.html.html</guid>
+        <link>http://localhost:4000/2013/02/07/how-to-make-your-uitabbarcontrollers-and-uinavigationcontrollers-respect-your-auto-rotation-choices.html.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2013/02/07/how-to-make-your-uitabbarcontrollers-and-uinavigationcontrollers-respect-your-auto-rotation-choices.html.html</guid>
         
         <category>ios,</category>
         

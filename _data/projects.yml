@@ -2,13 +2,31 @@
   url: http://uikonf.com
   responsibilities: "Organizer"
   image: assets/UIKonf.png
-  description: "[UIKonf](http://uikonf.com) is one of the [top iOS conferences](https://www.raywenderlich.com/127022/top-10-ios-conferences-in-2016) in the world. I've been organizing it with Sabine Geithner and Maxim Zaks."
+  description: "[UIKonf](http://uikonf.com) is one of the [top iOS conferences](https://www.raywenderlich.com/127022/top-10-ios-conferences-in-2016) in the world. I've been organizing it with Sabine Geithner, Bianca Walterspiel Stromlund and Julia Kallenberg."
+
+- title: CallTap 
+  url: https://calltap.app
+  responsibilities: Founder
+  image: assets/calltap.png
+  description: "[CallTap](https://calltap.app) is the missing phone call recorder on your iPhone. It is easy to use and does not try to scam and trick you into starting a subscription. I only want your money if you're happy with it."
+
+- title: Fifteen Jugglers 
+  url: https://fifteenjugglers.com
+  responsibilities: Founder
+  image: assets/fj.png
+  description: "I started [Fifteen Jugglers](https://fifteenjugglers.com) back in 2010 as the company for my consulting business. I am in the process of transforming it to a indie software business. Currently the app portfolio consists of 7 apps including [SolarWatch](https://solarwat.ch), [CallTap](https://calltap.app) and [Translate](https://gettranslate.app)."
+
+- title: Keepsafe 
+  url: https://getkeepsafe.com
+  responsibilities: General Manager Keepsafe Europe
+  image: assets/Keepsafe.png
+  description: "Founded in 2012 and based in San Francisco, CA, [Keepsafe](https://getkeepafe.com) is on a mission to protect people’s personal space. I joined Keepsafe in 2017 to build the Berlin office, hire the engineering team and lead the product effort for new consumer privacy products."
   
 - title: AppCare
   url: http://appcare.io
   responsibilities: "Founder"
   image: assets/AppCare.png
-  description: "[AppCare](http://appcare.io) is a subscription service for app maintenance. For a fixed monthly fee our experienced developers make sure that your app stays in shape and keeps on fulfilling its role in your business."
+  description: "[AppCare](http://appcare.io) was a subscription service for app maintenance. For a fixed monthly fee our experienced developers make sure that your app stays in shape and keeps on fulfilling its role in your business."
   
 - title: Iguazu
   url: https://github.com/ekurutepe/Iguazu
@@ -33,12 +51,6 @@
   responsibilities: "iOS development"
   image: assets/juke.jpeg
   description: "Mediamarkt/Saturn had acquired the technology behind the JUKE app from a previous vendor that had gone bankrupt. I helped them to make sense of the big legacy codebase and create the JUKE e-Books app and release it on the App Store. This allowed them start selling books from their catalog of over 1.5 million titles and start making revenue in a very short time."
-  
-- title: KeepSafe
-  url: http://getkeepsafe.com
-  responsibilities: "Infomation Hiding R&D, iOS development"
-  image: assets/Keepsafe.png
-  description: KeepSafe was investigating novel methods to prevent users from misusing the photos they had received from other users. We worked on a various information hiding schemes to discourage screenshots and prototyped a subjective evaluation app. This allow them to quickly figure out which settings for the algorithms worked best for different types of content.
   
 - title: Blloon
   url: http://www.edenspiekermann.com/projects/blloon/

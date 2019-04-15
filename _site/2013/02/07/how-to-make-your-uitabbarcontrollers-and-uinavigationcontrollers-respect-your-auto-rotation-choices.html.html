@@ -9,8 +9,8 @@
     <meta name="description" content="iOS 6 introduced many changes related to view auto-rotation, which basically aim to decouple view controller orientation from the device orientation. While t...">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://kurutepe.com/2013/02/07/how-to-make-your-uitabbarcontrollers-and-uinavigationcontrollers-respect-your-auto-rotation-choices.html.html">
-    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://kurutepe.com/feed.xml">
+    <link rel="canonical" href="http://localhost:4000/2013/02/07/how-to-make-your-uitabbarcontrollers-and-uinavigationcontrollers-respect-your-auto-rotation-choices.html.html">
+    <link rel="alternate" type="application/rss+xml" title="Engin Kurutepe" href="http://localhost:4000/feed.xml">
     <script src="https://use.typekit.net/ixz3dcs.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
@@ -19,14 +19,13 @@
         <header>
     <div class="container">
         <div class="intro">
-            <p class="intro__main">My name is <span>Engin Kurutepe</span> and I am a mobile product expert</p>
-            <p class="intro__post"></p>
+            <p class="intro__main">My name is Engin Kurutepe and I make useful apps</p>
         </div>
         <nav>
           <ul>
-            <li><a href="/">About</a></li>
+            <li><a href="/">Blog</a></li>
             <li><a href="/projects">Projects</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </nav>
     </div>
@@ -51,7 +50,7 @@
 
 <p><code class="highlighter-rouge">UITabBarController</code></p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UITabBarController</span> <span class="p">(</span><span class="nl">AutoRotationForwarding</span><span class="p">)</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UITabBarController</span> <span class="p">(</span><span class="nl">AutoRotationForwarding</span><span class="p">)</span>
 
 <span class="k">-</span><span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">shouldAutorotate</span>
 <span class="p">{</span>
@@ -73,12 +72,11 @@
 <span class="p">}</span>
 
 <span class="k">@end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>and <code class="highlighter-rouge">UINavigationController</code></p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UINavigationController</span> <span class="p">(</span><span class="nl">AutoRotationForwarding</span><span class="p">)</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">UINavigationController</span> <span class="p">(</span><span class="nl">AutoRotationForwarding</span><span class="p">)</span>
 
 <span class="k">-</span><span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">shouldAutorotate</span>
 <span class="p">{</span>
@@ -99,8 +97,7 @@
 <span class="p">}</span>
 
 <span class="k">@end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Hope this helps somebody</p>
 
